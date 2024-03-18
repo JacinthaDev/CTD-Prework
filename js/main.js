@@ -48,6 +48,8 @@ getCat()
 const breedInput = document.getElementById('breedInput')
 const breedList = document.getElementById('breedList')
 const catImageContainer = document.getElementById('catImageContainer')
+const buttonContainer = document.getElementById('buttonContainer')
+const imageAndButtonContainer = document.getElementById('imageAndButtonContainer')
 
 // Add event listener to input so we know which breed was selected and its breed ID 
 breedInput.addEventListener('input', function(event) {
@@ -74,6 +76,7 @@ breedInput.addEventListener('input', function(event) {
 
         catImageContainer.innerHTML = ''
         catImageContainer.appendChild(img)
+        imageAndButtonContainer.classList.add("container")
 
         const button = document.createElement('button')
         button.textContent = 'Click for more information'
@@ -81,7 +84,8 @@ breedInput.addEventListener('input', function(event) {
           // Navigate to a new page with more information about the breed
           window.location.href = `newpage.html`
         })
-        catImageContainer.appendChild(button)
+        buttonContainer.appendChild(button)
+
       } else {
         catImageContainer.innerHTML = 'No image available for this cat.'
       }

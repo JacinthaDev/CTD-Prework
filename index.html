@@ -16,24 +16,20 @@ https://codepen.io/ecemgo/pen/mdzjEyX -->
       <input type="checkbox" id="check">
       <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
       <label class="logo">MeowPedia</label>
-      <ul>
-        <li><a class="nav-item" href="#">Home</a></li>
-        <li><a class="nav-item" href="#">About</a></li>
-        <li><a class="nav-item" href="#">Services</a></li>
-        <li><a class="nav-item" href="#">Contact</a></li>
-        <li><a class="nav-item" href="#">Feedback</a></li>
-      </ul>
     </nav>
     
-    <section>
-      <input type="text" id="breedInput" list="breedList" placeholder="Type breed name...">
-      <datalist id="breedList"></datalist>
-      
-
-      <div class="container" id="catImageContainer">
-
+    <main>
+        <div id="content-div">
+          <h1>Welcome to MeowPedia. Type a cat breed name to get started!</h1>
+          <input type="text" id="breedInput" list="breedList" placeholder="Type breed name...">
+          <datalist id="breedList"></datalist>
+          
+          <div id="imageAndButtonContainer" >
+            <div id="catImageContainer"></div>
+            <div id="buttonContainer"></div>
+          </div>
       </div>
-    </section>
+    </main>
     
   </body>
     <script type="text/javascript" src="js/main.js"></script>
