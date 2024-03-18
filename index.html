@@ -16,7 +16,6 @@ https://codepen.io/ecemgo/pen/mdzjEyX -->
       <input type="checkbox" id="check">
       <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
       <label class="logo">MeowPedia</label>
-      <img> 
       <ul>
         <li><a class="nav-item" href="#">Home</a></li>
         <li><a class="nav-item" href="#">About</a></li>
@@ -27,18 +26,12 @@ https://codepen.io/ecemgo/pen/mdzjEyX -->
     </nav>
     
     <section>
-      <label for="breedInput">Search for a cat breed:</label>
-      <input type="text" id="breedInput" list="breedOptions">
-      <datalist id="breedOptions">
-        <!-- Options will be dynamically populated here -->
-      </datalist>
+      <input type="text" id="breedInput" list="breedList" placeholder="Type breed name...">
+      <datalist id="breedList"></datalist>
       
 
-      <div class="container">
-        <div class="box box1">
-        </div>
-        <div class= "box box2">
-        </div>
+      <div class="container" id="catImageContainer">
+
       </div>
     </section>
     

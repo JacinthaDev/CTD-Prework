@@ -95,18 +95,20 @@ section {
 .box {
   background: rgba(47, 49, 65, 0.5);
   color: white;
-  padding: 70px 50px;
+  width: 17rem;
+  height: auto;
+  padding: 1.5rem;
   text-align: center;
   border-radius: 20px;
   box-shadow: 10px 16px 42px -23px rgba(0,0,0,0.44);
+  margin-top: 3rem;
 }
 
-.box1{
-  margin-right: 5rem;
-}
 
-.box2{
-  margin-left: 5rem;
+img{
+  margin-top: 2rem;
+  height: 15rem;
+  width: 15rem;
 }
 
 h1 {
