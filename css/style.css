@@ -56,6 +56,7 @@ nav > ul > li {
   line-height: 50px;
   padding: 0 50px;
   text-transform: uppercase;
+  margin: 0;
 } 
 
 .checkbtn {
@@ -85,7 +86,7 @@ main {
 }
 
 #content-div{
-  margin-top: 1.5rem;
+  margin-top: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,7 +97,15 @@ main {
   flex-direction: column;
   align-items: center;
   margin-top:2rem;
+}
+
+.border{
   border: 3px dotted white;
+}
+
+.imageDimensions{
+  height: 15rem;
+  width: 15rem;
 }
 
 button{
@@ -131,12 +140,12 @@ button{
 
 img{
   margin-top: 2rem;
-  height: 15rem;
-  width: 15rem;
+  /* height: 15rem;
+  width: 15rem; */
   border-radius: 5px;
 }
 
-h1 {
+h2 {
   font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   margin-bottom: 1rem;
 

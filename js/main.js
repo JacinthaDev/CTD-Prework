@@ -1,16 +1,3 @@
-// JavaScript sourced from CodePen.io. "Responsive Navbar" by Ecem Gokdogan
-// https://codepen.io/ecemgo/pen/mdzjEyX
-
-const navItems = document.querySelectorAll('.nav-item')
-
-navItems.forEach(e => {
-  e.addEventListener('click', () => {
-    document.querySelector('.active')?.classList.remove("active")
-    e.classList.add("active")
-  })
-})
-
-//The following code is written by me
 const api_key = "live_sZRoFjNrqdQ8ML6ZM9sKbXbU4EkFLv4jdWlomJbgqtMDyYuGqcyJQJbJP1PmNZX0"
 let breedsArray = []
 
@@ -73,10 +60,12 @@ breedInput.addEventListener('input', function(event) {
         const img = document.createElement('img')
         img.src = imageUrl
         img.alt = data.name 
+        img.classList.add("imageDimensions")
 
         catImageContainer.innerHTML = ''
         catImageContainer.appendChild(img)
         imageAndButtonContainer.classList.add("container")
+        imageAndButtonContainer.classList.add("border")
 
         const button = document.createElement('button')
         button.textContent = 'Click for more information'
