@@ -1,6 +1,6 @@
 const api_key = "live_sZRoFjNrqdQ8ML6ZM9sKbXbU4EkFLv4jdWlomJbgqtMDyYuGqcyJQJbJP1PmNZX0"
 let breedsArray = []
-
+let selectedBreedId
 
 function getCat() {
   const url = `https://api.thecatapi.com/v1/breeds/`
@@ -15,7 +15,6 @@ function getCat() {
       info.forEach(breed => {
         breedsArray.push([breed.name, breed.id]) 
       })
-      console.log(breedsArray)
 
       // Populate breed options into HTML datalist after fetching data
       breedsArray.forEach(breed => {
@@ -44,8 +43,9 @@ breedInput.addEventListener('input', function(event) {
   // Find the corresponding ID for the selected breed name
   const selectedBreed = breedsArray.find(breed => breed[0] === inputValue)
   if (selectedBreed) {
-    const selectedBreedId = selectedBreed[1]
-    
+    selectedBreedId = selectedBreed[1]; 
+    sessionStorage.setItem('selectedBreedId', selectedBreedId);
+
     // Make another fetch request using selectedBreedId to get just that breed's info
     fetch(`https://api.thecatapi.com/v1/breeds/${selectedBreedId}`, {
       headers: {
@@ -84,3 +84,4 @@ breedInput.addEventListener('input', function(event) {
     })
   }
 })
+

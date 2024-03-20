@@ -1,5 +1,10 @@
+// Retrieve selectedBreedId from session storage
+const selectedBreedId = sessionStorage.getItem('selectedBreedId');
+
+// Use selectedBreedId as needed in this file
+console.log(selectedBreedId);
+
 const api_key = "live_sZRoFjNrqdQ8ML6ZM9sKbXbU4EkFLv4jdWlomJbgqtMDyYuGqcyJQJbJP1PmNZX0"
-import { selectedBreedId } from './main.js';
 
 // Make another fetch request using selectedBreedId to get just that breed's info
 fetch(`https://api.thecatapi.com/v1/breeds/${selectedBreedId}`, {
@@ -13,6 +18,7 @@ fetch(`https://api.thecatapi.com/v1/breeds/${selectedBreedId}`, {
     const img = document.getElementById('catImage')
     img.src = imageUrl
     img.alt = info.name
+    img.classList.add("imageDimensions2")
 
     console.log(info);
     
@@ -23,9 +29,11 @@ fetch(`https://api.thecatapi.com/v1/breeds/${selectedBreedId}`, {
 
     breedName.innerText = info.name
     origin.innerText = info.origin
-    description.innerText = info.description
-    temperament.innerText = info.temperament
+    description.innerText = `Description: ${info.description}`
+    temperament.innerText = `Temperament: ${info.temperament}`
 })
 .catch(err => {
     console.log(`Error fetching breed details: ${err}`)
 })
+
+

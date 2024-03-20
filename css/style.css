@@ -57,6 +57,7 @@ nav > ul > li {
   padding: 0 50px;
   text-transform: uppercase;
   margin: 0;
+  display: inline-block;
 } 
 
 .checkbtn {
@@ -99,6 +100,11 @@ main {
   margin-top:2rem;
 }
 
+#back-home-button{
+  width: 20rem;
+  margin-top: 2rem;
+}
+
 .border{
   border: 3px dotted white;
 }
@@ -106,6 +112,31 @@ main {
 .imageDimensions{
   height: 15rem;
   width: 15rem;
+}
+
+.imageDimensions2{
+  height: 20rem;
+  width: 20rem;
+}
+
+#all-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35rem;
+  margin-top: 3rem;
+  background: rgb(214, 147, 216);
+  border-radius: 5px;
+  padding: 2rem;
+  border: 5px dotted white;
+}
+
+#description, #temperament{
+  margin-top: 2rem;
+}
+
+#origin, #description, #temperament, #breedName{
+  text-align: center;
 }
 
 button{
@@ -140,8 +171,6 @@ button{
 
 img{
   margin-top: 2rem;
-  /* height: 15rem;
-  width: 15rem; */
   border-radius: 5px;
 }
 
