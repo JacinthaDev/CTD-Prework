@@ -6,27 +6,27 @@ function getCat() {
   const url = `https://api.thecatapi.com/v1/breeds/`
   
   fetch(url, {
-      headers: {
-        'x-api-key': api_key
-      }
+    headers: {
+      'x-api-key': api_key
+    }
+  })
+  .then(res => res.json()) 
+  .then(info => {
+    info.forEach(breed => {
+      breedsArray.push([breed.name, breed.id])
     })
-    .then(res => res.json()) 
-    .then(info => {
-      info.forEach(breed => {
-        breedsArray.push([breed.name, breed.id]) 
-      })
 
-      // Populate breed options into HTML datalist after fetching data
-      breedsArray.forEach(breed => {
-        const option = document.createElement('option')
-        option.value = breed[0] 
-        option.id = breed[1] 
-        breedList.appendChild(option)
-      })
+    // Populate breed options into HTML datalist after fetching data
+    breedsArray.forEach(breed => {
+      const option = document.createElement('option')
+      option.value = breed[0]
+      option.id = breed[1]
+      breedList.appendChild(option)
     })
-    .catch(err => {
-      console.log(`error ${err}`)
-    })
+  })
+  .catch(err => {
+    console.log(`error ${err}`)
+  })
 }
 
 getCat()
@@ -37,16 +37,17 @@ const catImageContainer = document.getElementById('catImageContainer')
 const buttonContainer = document.getElementById('buttonContainer')
 const imageAndButtonContainer = document.getElementById('imageAndButtonContainer')
 
-// Add event listener to input so we know which breed was selected and its breed ID 
+// Add event listener to each option in the datalist so we know which breed was selected and its breed ID 
 breedInput.addEventListener('input', function(event) {
   const inputValue = event.target.value
   // Find the corresponding ID for the selected breed name
   const selectedBreed = breedsArray.find(breed => breed[0] === inputValue)
   if (selectedBreed) {
-    selectedBreedId = selectedBreed[1]; 
-    sessionStorage.setItem('selectedBreedId', selectedBreedId);
+    selectedBreedId = selectedBreed[1] 
+    //put in session storage so we can use in main2.js for newpage.html
+    sessionStorage.setItem('selectedBreedId', selectedBreedId)
 
-    // Make another fetch request using selectedBreedId to get just that breed's info
+    // Make another fetch request using selectedBreedId to get just that breed's info so we can use its picture
     fetch(`https://api.thecatapi.com/v1/breeds/${selectedBreedId}`, {
       headers: {
         'x-api-key': api_key
@@ -59,7 +60,7 @@ breedInput.addEventListener('input', function(event) {
 
         const img = document.createElement('img')
         img.src = imageUrl
-        img.alt = data.name 
+        img.alt = data.name
         img.classList.add("imageDimensions")
 
         catImageContainer.innerHTML = ''
@@ -74,7 +75,6 @@ breedInput.addEventListener('input', function(event) {
           window.location.href = `newpage.html`
         })
         buttonContainer.appendChild(button)
-
       } else {
         catImageContainer.innerHTML = 'No image available for this cat.'
       }
@@ -84,4 +84,3 @@ breedInput.addEventListener('input', function(event) {
     })
   }
 })
-

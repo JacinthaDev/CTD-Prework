@@ -1,9 +1,5 @@
 // Retrieve selectedBreedId from session storage
 const selectedBreedId = sessionStorage.getItem('selectedBreedId');
-
-// Use selectedBreedId as needed in this file
-console.log(selectedBreedId);
-
 const api_key = "live_sZRoFjNrqdQ8ML6ZM9sKbXbU4EkFLv4jdWlomJbgqtMDyYuGqcyJQJbJP1PmNZX0"
 
 // Make another fetch request using selectedBreedId to get just that breed's info
@@ -19,8 +15,6 @@ fetch(`https://api.thecatapi.com/v1/breeds/${selectedBreedId}`, {
     img.src = imageUrl
     img.alt = info.name
     img.classList.add("imageDimensions2")
-
-    console.log(info);
     
     const breedName = document.getElementById('breedName')
     const origin = document.getElementById('origin')
