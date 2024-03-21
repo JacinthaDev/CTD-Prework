@@ -37,9 +37,10 @@ const catImageContainer = document.getElementById('catImageContainer')
 const buttonContainer = document.getElementById('buttonContainer')
 const imageAndButtonContainer = document.getElementById('imageAndButtonContainer')
 
-// Add event listener to each option in the datalist so we know which breed was selected and its breed ID 
+// Add event listener to each option in the datalist so we know which breed was selected and its breed ID from the API
 breedInput.addEventListener('input', function(event) {
   const inputValue = event.target.value
+
   // Find the corresponding ID for the selected breed name
   const selectedBreed = breedsArray.find(breed => breed[0] === inputValue)
   if (selectedBreed) {
@@ -65,6 +66,8 @@ breedInput.addEventListener('input', function(event) {
 
         catImageContainer.innerHTML = ''
         catImageContainer.appendChild(img)
+
+        //Add styles to HTML as we dynamically insert it
         imageAndButtonContainer.classList.add("container")
         imageAndButtonContainer.classList.add("border")
 
